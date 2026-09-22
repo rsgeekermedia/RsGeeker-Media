@@ -1,0 +1,300 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #06080e;
+    color: #f8fafc;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  html.light body,
+  html.theme-light body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ========================================================
+   BLUE & CYAN SIGNATURE TECH GRADIENTS & ACCENTS
+   ======================================================== */
+.cyan-gradient-text,
+.blue-gradient-text,
+.gold-gradient-text {
+  background: linear-gradient(135deg, #38bdf8 0%, #06b6d4 50%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.light .cyan-gradient-text,
+html.light .blue-gradient-text,
+html.light .gold-gradient-text,
+.theme-light .cyan-gradient-text,
+.theme-light .blue-gradient-text,
+.theme-light .gold-gradient-text {
+  background: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #1d4ed8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cyan-border,
+.gold-border {
+  border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+html.light .cyan-border,
+html.light .gold-border,
+.theme-light .cyan-border,
+.theme-light .gold-border {
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.cyan-glow,
+.gold-glow {
+  box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.2);
+}
+
+html.light .cyan-glow,
+html.light .gold-glow,
+.theme-light .cyan-glow,
+.theme-light .gold-glow {
+  box-shadow: 0 0 25px -5px rgba(37, 99, 235, 0.12);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #06080e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+html.light ::-webkit-scrollbar-track,
+.theme-light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.light ::-webkit-scrollbar-thumb,
+.theme-light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+html.light ::-webkit-scrollbar-thumb:hover,
+.theme-light ::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+/* ========================================================
+   COMPREHENSIVE LIGHT THEME ENGINE (WHITE TILES & BLUE ACCENTS)
+   Guarantees that ALL cards, tiles, boxes, headers, footers,
+   and modals turn crisp white and light slate in Light Mode.
+   ======================================================== */
+html.light,
+html.theme-light {
+  color-scheme: light;
+}
+
+/* 1. Page Backgrounds & Sections */
+html.light [class*="bg-[#06080e]"],
+html.light [class*="bg-[#07090e]"],
+html.light [class*="bg-[#080b12]"],
+html.light [class*="bg-[#070911]"],
+html.light [class*="bg-[#090b10]"],
+html.light [class*="bg-[#06080d]"],
+.theme-light [class*="bg-[#06080e]"],
+.theme-light [class*="bg-[#07090e]"],
+.theme-light [class*="bg-[#080b12]"],
+.theme-light [class*="bg-[#070911]"],
+.theme-light [class*="bg-[#090b10]"],
+.theme-light [class*="bg-[#06080d]"] {
+  background-color: #f8fafc !important;
+}
+
+/* 2. All Card & Tile Containers -> Pure White */
+html.light [class*="bg-[#0b0e17]"],
+html.light [class*="bg-[#0b0f17]"],
+html.light [class*="bg-[#0c101a]"],
+html.light [class*="bg-[#0d121d]"],
+html.light [class*="bg-[#0d111d]"],
+html.light [class*="bg-[#0a0d14]"],
+html.light [class*="bg-slate-900"],
+html.light [class*="bg-slate-950"],
+.theme-light [class*="bg-[#0b0e17]"],
+.theme-light [class*="bg-[#0b0f17]"],
+.theme-light [class*="bg-[#0c101a]"],
+.theme-light [class*="bg-[#0d121d]"],
+.theme-light [class*="bg-[#0d111d]"],
+.theme-light [class*="bg-[#0a0d14]"],
+.theme-light [class*="bg-slate-900"],
+.theme-light [class*="bg-slate-950"] {
+  background-color: #ffffff !important;
+}
+
+/* Neutral secondary containers & subtle chips */
+html.light [class*="bg-slate-800"],
+.theme-light [class*="bg-slate-800"] {
+  background-color: #f1f5f9 !important;
+}
+
+html.light [class*="bg-slate-700"],
+.theme-light [class*="bg-slate-700"] {
+  background-color: #e2e8f0 !important;
+}
+
+/* Override dark gradients on tiles and cards to clean white */
+html.light div[class*="from-slate-900"],
+html.light div[class*="from-[#0b0f17]"],
+html.light div[class*="from-[#0b0e17]"],
+html.light article[class*="from-slate-900"],
+html.light section[class*="from-slate-900"],
+.theme-light div[class*="from-slate-900"],
+.theme-light div[class*="from-[#0b0f17]"],
+.theme-light div[class*="from-[#0b0e17]"],
+.theme-light article[class*="from-slate-900"],
+.theme-light section[class*="from-slate-900"] {
+  background-image: none !important;
+  background-color: #ffffff !important;
+}
+
+/* 3. Header, Navigation & Mobile Menu */
+html.light header,
+.theme-light header {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.light [class*="fixed inset-x-0 top-"],
+.theme-light [class*="fixed inset-x-0 top-"] {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+/* 4. Footer */
+html.light footer,
+.theme-light footer {
+  background-color: #f8fafc !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+/* 5. Clean Light Borders Across All Cards */
+html.light [class*="border-slate-800"],
+html.light [class*="border-slate-700"],
+html.light [class*="border-white/5"],
+html.light [class*="border-white/10"],
+html.light [class*="border-white/15"],
+.theme-light [class*="border-slate-800"],
+.theme-light [class*="border-slate-700"],
+.theme-light [class*="border-white/5"],
+.theme-light [class*="border-white/10"],
+.theme-light [class*="border-white/15"] {
+  border-color: #e2e8f0 !important;
+}
+
+/* 6. Typography & Contrast Hierarchy */
+html.light .text-white,
+.theme-light .text-white {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-100,
+html.light .text-slate-200,
+.theme-light .text-slate-100,
+.theme-light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300,
+.theme-light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400,
+html.light .text-slate-500,
+.theme-light .text-slate-400,
+.theme-light .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Keep button labels bright when button has a dark or colored gradient */
+html.light button.text-white,
+html.light button[class*="from-cyan-"],
+html.light button[class*="from-blue-"],
+html.light a[class*="from-cyan-"],
+html.light a[class*="from-blue-"],
+.theme-light button.text-white,
+.theme-light button[class*="from-cyan-"],
+.theme-light button[class*="from-blue-"],
+.theme-light a[class*="from-cyan-"],
+.theme-light a[class*="from-blue-"] {
+  color: #ffffff !important;
+}
+
+/* 7. Soft Blue Badges in Light Mode */
+html.light [class*="bg-cyan-950"],
+html.light [class*="bg-blue-950"],
+html.light [class*="bg-amber-950"],
+.theme-light [class*="bg-cyan-950"],
+.theme-light [class*="bg-blue-950"],
+.theme-light [class*="bg-amber-950"] {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border-color: #bfdbfe !important;
+}
+
+/* 8. Input Fields & Textareas */
+html.light input:not([type="checkbox"]):not([type="radio"]),
+html.light textarea,
+html.light select,
+.theme-light input:not([type="checkbox"]):not([type="radio"]),
+.theme-light textarea,
+.theme-light select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.light input:focus,
+html.light textarea:focus,
+html.light select:focus,
+.theme-light input:focus,
+.theme-light textarea:focus,
+.theme-light select:focus {
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2) !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder,
+.theme-light input::placeholder,
+.theme-light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* 9. Card Elevation in Light Mode */
+html.light .rounded-2xl,
+html.light .rounded-3xl,
+html.light .rounded-xl,
+.theme-light .rounded-2xl,
+.theme-light .rounded-3xl,
+.theme-light .rounded-xl {
+  box-shadow: 0 2px 10px -2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+/* Ambient glow subtle adjustment in light mode */
+html.light [class*="blur-["],
+.theme-light [class*="blur-["] {
+  opacity: 0.12 !important;
+}
