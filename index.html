@@ -55,6 +55,10 @@
     }
     </script>
     <script type="text/javascript">
+      // Ensure trailing slash for GitHub Pages repo subpaths so relative assets resolve correctly
+      if (window.location.hostname.endsWith('github.io') && !window.location.pathname.endsWith('/') && !window.location.pathname.includes('.')) {
+        window.location.replace(window.location.pathname + '/' + window.location.search + window.location.hash);
+      }
       // GitHub Pages SPA router redirect handler
       (function(l) {
         if (l.search[1] === '/' ) {
